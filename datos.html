@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Verificación de Licencia de Conducir - Jalisco</title>
+     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+ 
+         body {
+             font-family: 'Roboto', sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #ffffff;
+             color: #333;
+             display: flex;
+             flex-direction: column;
+             min-height: 100vh;
+         }
+         
+         header {
+             text-align: center;
+             padding: 15px 0;
+             background-color: white;
+         }
+         
+         .logo-container {
+             max-width: 800px;
+             margin: 0 auto;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+         
+         .logo {
+             width: 185px;
+             margin-bottom: 1px;
+         }
+         
+         .main-title-wrapper {
+             background-color: #f5f5f5;
+         }
+         
+         .main-title-container {
+             background-color: #ffffff;
+             padding: 20px 0;
+             margin: 0;
+             text-align: center;
+         }
+         
+         .main-title {
+             color: #495057;
+             font-size: 28px;
+             margin: 0;
+             font-weight: bold;
+             text-transform: uppercase;
+         }
+         
+         .divider-bar {
+             height: 1px;
+             background-color: #ddd;
+         }
+         
+         .content {
+             flex-grow: 1;
+             padding: 20px;
+             display: flex;
+             justify-content: center;
+             align-items: flex-start;
+             max-width: 1200px;
+             margin: 0 auto;
+         }
+         
+         .data-container {
+             width: 600px;
+             padding: 20px;
+             background-color: white;
+             border: 1px solid #ddd;
+             border-radius: 5px;
+             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+         }
+ 
+         .data-row {
+             display: flex;
+             margin-bottom: 15px;
+             border-bottom: 1px solid #eee;
+             padding-bottom: 10px;
+         }
+ 
+         .data-label {
+             width: 40%;
+             font-weight: bold;
+             color: #666;
+         }
+ 
+         .data-value {
+             width: 60%;
+             font-weight: 400;
+         }
+ 
+         .valid-tag {
+             display: inline-block;
+             background-color: #4caf50;
+             color: white;
+             padding: 3px 10px;
+             border-radius: 3px;
+             font-size: 14px;
+         }
+         
+         .footer {
+             background-color: white;
+             border-top: 1px solid #ddd;
+             text-align: center;
+             padding: 15px;
+             color: #777;
+             font-size: 12px;
+             margin-top: auto;
+         }
+     </style>
+ </head>
+ <body>
+     <header>
+         <div class="logo-container">
+             <img src="Gobierno_de_Jalisco_18-24.svg.png" alt="Jalisco Gobierno Logo" class="logo">
+         </div>
+     </header>
+ 
+     <div class="main-title-wrapper">
+         <div class="main-title-container">
+             <h2 class="main-title">Verificación de Licencia de Conducir</h2>
+         </div>
+         <div class="divider-bar"></div>
+     </div>
+ 
+     <div class="content">
+         <div class="data-container">
+             <div class="data-row">
+                 <div class="data-label">NOMBRE:</div>
+                 <div class="data-value" id="nombre"></div>
+             </div>
+             <div class="data-row">
+                 <div class="data-label">NO. DOCUMENTO:</div>
+                 <div class="data-value" id="documento"></div>
+             </div>
+             <div class="data-row">
+                 <div class="data-label">TIPO:</div>
+                 <div class="data-value" id="tipo"></div>
+             </div>
+             <div class="data-row">
+                 <div class="data-label">FECHA VIGENCIA:</div>
+                 <div class="data-value" id="fecha"></div>
+             </div>
+             <div class="data-row">
+                 <div class="data-label">VIGENCIA:</div>
+                 <div class="data-value" id="vigencia"></div>
+             </div>
+             <div class="data-row">
+                 <div class="data-label">EMITIDA EN:</div>
+                 <div class="data-value" id="emitida"></div>
+             </div>
+         </div>
+     </div>
+ 
+     <footer class="footer">
+         © 2025 - Cosmocoder S.A. de C.V.
+     </footer>
+ 
+     <script>
+    function getURLParams() {
+        return {
+            nombre: 'GOMEZ AGUILAR MARIO',
+            documento: '14A6809505',
+            fecha: '29/05/2029',
+            tipo: 'CHÓFER',
+            vigencia: 'VÁLIDA',
+            emitida: 'OFICINAS CENTRALES'
+        };
+    }
+
+    function cargarDatos() {
+        const datos = getURLParams();
+
+        document.getElementById('nombre').textContent = datos.nombre;
+        document.getElementById('documento').textContent = datos.documento;
+        document.getElementById('fecha').textContent = datos.fecha;
+        document.getElementById('tipo').textContent = datos.tipo;
+        document.getElementById('vigencia').innerHTML = `<span class="valid-tag">${datos.vigencia}</span>`;
+        document.getElementById('emitida').textContent = datos.emitida;
+    }
+
+    window.onload = cargarDatos;
+</script>
+
+ </body>
+ </html>
